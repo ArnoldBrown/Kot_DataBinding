@@ -2,10 +2,13 @@ package com.mrbee.starterproject
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
+import androidx.transition.Visibility
 import com.mrbee.starterproject.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -18,6 +21,9 @@ class MainActivity : AppCompatActivity() {
         binding.submitButton.setOnClickListener {
             displayGreeting()
         }
+        binding.progressButton.setOnClickListener {
+            startOrStopProgress()
+        }
     }
 
     private fun displayGreeting() {
@@ -25,6 +31,18 @@ class MainActivity : AppCompatActivity() {
 //        val nameText = findViewById<EditText>(R.id.name_edit_text)
         binding.apply {
             greetingTextView.text = "Hello! "+ nameEditText.text
+        }
+    }
+
+    private fun startOrStopProgress() {
+        binding.apply {
+            if(progressBar.isVisible){
+                progressBar.visibility = View.INVISIBLE
+                progressButton.text = "Start"
+            }else{
+                progressBar.visibility = View.VISIBLE
+                progressButton.text = "Stop"
+            }
         }
     }
 }
