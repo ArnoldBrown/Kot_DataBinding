@@ -1,48 +1,29 @@
 package com.mrbee.starterproject
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
-import androidx.transition.Visibility
+import com.mrbee.starterproject.dataBind.DataBindActivity
+import com.mrbee.starterproject.dataBind.DataClassBindActivity
 import com.mrbee.starterproject.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_main)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-//        val button = findViewById<Button>(R.id.submit_button)
-        binding.submitButton.setOnClickListener {
-            displayGreeting()
-        }
-        binding.progressButton.setOnClickListener {
-            startOrStopProgress()
-        }
-    }
 
-    private fun displayGreeting() {
-//        val messageView = findViewById<TextView>(R.id.greeting_text_view)
-//        val nameText = findViewById<EditText>(R.id.name_edit_text)
         binding.apply {
-            greetingTextView.text = "Hello! "+ nameEditText.text
-        }
-    }
-
-    private fun startOrStopProgress() {
-        binding.apply {
-            if(progressBar.isVisible){
-                progressBar.visibility = View.INVISIBLE
-                progressButton.text = "Start"
-            }else{
-                progressBar.visibility = View.VISIBLE
-                progressButton.text = "Stop"
+            dataBinding.setOnClickListener {
+                val intent = Intent(this@MainActivity, DataBindActivity::class.java)
+                startActivity(intent)
+            }
+            dataClassBind.setOnClickListener {
+                val intent2 = Intent(this@MainActivity, DataClassBindActivity::class.java)
+                startActivity(intent2)
             }
         }
     }
+
 }
