@@ -8,15 +8,17 @@ import androidx.lifecycle.ViewModelProvider
 import com.mrbee.starterproject.R
 import com.mrbee.starterproject.databinding.ActivityViewModelTestBinding
 
-class ViewModelTestActivity: AppCompatActivity() {
+class VmTestActivity: AppCompatActivity() {
   private lateinit var binding: ActivityViewModelTestBinding
-  private lateinit var viewModel: VmActivityViewModel
+  private lateinit var viewModel: VmActivityTwoViewModel
+  private lateinit var viewModelFactory: VmActivityViewModelFactory
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_view_model_test)
-        viewModel = ViewModelProvider(this).get(VmActivityViewModel::class.java)
+        viewModelFactory = VmActivityViewModelFactory(125)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(VmActivityTwoViewModel::class.java)
 
         binding.countTextView.text = viewModel.getTotal().toString()
 

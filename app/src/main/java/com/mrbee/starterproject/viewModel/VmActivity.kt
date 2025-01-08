@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.mrbee.starterproject.R
 import com.mrbee.starterproject.databinding.ActivityViewModelBinding
 
-class ViewModelActivity : AppCompatActivity() {
+class VmActivity : AppCompatActivity() {
     private lateinit var binding: ActivityViewModelBinding
     private lateinit var viewModel: VmActivityViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,12 +20,6 @@ class ViewModelActivity : AppCompatActivity() {
             binding.countTextView.text = viewModel.getUpdatedCount().toString()
         }
 
-    }
-
-    private fun displayGreeting() {
-//        binding.apply {
-//            greetingTextView.text = "Hello! "+ nameEditText.text
-//        }
     }
 
 }
