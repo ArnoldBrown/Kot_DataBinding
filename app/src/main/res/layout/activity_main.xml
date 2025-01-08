@@ -52,26 +52,26 @@
 
         <!-- Second Row of Buttons -->
         <Button
-            android:id="@+id/secondRowButton1"
+            android:id="@+id/viewModalDemo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Button 3"
+            android:text="@string/viewmodeldemo1"
             android:textSize="20sp"
             app:layout_constraintTop_toBottomOf="@id/dataBinding"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/secondRowButton2"
+            app:layout_constraintEnd_toStartOf="@+id/viewModalTest"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             app:layout_constraintHorizontal_chainStyle="spread" />
 
         <Button
-            android:id="@+id/secondRowButton2"
+            android:id="@+id/viewModalTest"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Button 4"
+            android:text="@string/viewmodeldemoTest"
             android:textSize="20sp"
             app:layout_constraintTop_toBottomOf="@id/dataClassBind"
-            app:layout_constraintStart_toEndOf="@id/secondRowButton1"
+            app:layout_constraintStart_toEndOf="@id/viewModalDemo"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp" />

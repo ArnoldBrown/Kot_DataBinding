@@ -6,4 +6,10 @@
     <string name="select_the_topic">Select the Topic</string>
     <string name="data_binding">Data Binding</string>
     <string name="data_class_bind">Data Class</string>
+    <string name="viewmodeldemo1">ViewModel</string>
+    <string name="viewmodeldemoTest">ViewModelTest</string>
+    <string name="count">Count</string>
+    <string name="click_here">Click Here</string>
+    <string name="enter_count_here">Enter count here</string>
+    <string name="add">Add</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.mrbee.starterproject.dataBind
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -22,6 +23,7 @@ class DataBindActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun displayGreeting() {
 //        val messageView = findViewById<TextView>(R.id.greeting_text_view)
 //        val nameText = findViewById<EditText>(R.id.name_edit_text)
@@ -30,6 +32,7 @@ class DataBindActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun startOrStopProgress() {
         binding.apply {
             if(progressBar.isVisible){

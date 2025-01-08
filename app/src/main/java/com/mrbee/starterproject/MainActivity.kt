@@ -7,6 +7,8 @@ import androidx.databinding.DataBindingUtil
 import com.mrbee.starterproject.dataBind.DataBindActivity
 import com.mrbee.starterproject.dataBind.DataClassBindActivity
 import com.mrbee.starterproject.databinding.ActivityMainBinding
+import com.mrbee.starterproject.viewModel.ViewModelActivity
+import com.mrbee.starterproject.viewModel.ViewModelTestActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -22,6 +24,14 @@ class MainActivity : AppCompatActivity() {
             dataClassBind.setOnClickListener {
                 val intent2 = Intent(this@MainActivity, DataClassBindActivity::class.java)
                 startActivity(intent2)
+            }
+            viewModalDemo.setOnClickListener {
+                val intent3 = Intent(this@MainActivity, ViewModelActivity::class.java)
+                startActivity(intent3)
+            }
+            viewModalTest.setOnClickListener {
+                val intent4 = Intent(this@MainActivity, ViewModelTestActivity::class.java)
+                startActivity(intent4)
             }
         }
     }
